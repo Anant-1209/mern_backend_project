@@ -41,12 +41,7 @@ pipeline {
             steps {
                 script {
                     bat """
-                    sonar-scanner ^
-                    -Dsonar.projectKey=backend_jenkins_project ^
-                    
-                    -Dsonar.sources=src ^
-                    -Dsonar.exclusions=node_modules/**,build/** ^
-                    -Dsonar.host.url=http://localhost:9000 ^
+                   sonar-scanner.bat -D"sonar.projectKey=backend_jenkins_project" -D"sonar.sources=." -D"sonar.host.url=http://localhost:9000" -D"sonar.token=sqp_e4b0f9665bd4d16bb2574676d68224b34786c18d"
                     -Dsonar.login=%SONAR_TOKEN%
                     """
                 }
