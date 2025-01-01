@@ -6,5 +6,11 @@ module.exports = {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist')
   },
-  mode: 'development' // Change to 'production' for production builds
+  mode: 'development', // Change to 'production' for production builds
+  resolve: {
+    fallback: {
+      "path": require.resolve("path-browserify"),
+      "fs": require.resolve("browserify-fs")
+    }
+  }
 };
